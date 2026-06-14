@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="data:image/svg+xml,&lt;svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22&gt;&lt;text y=%22.9em%22 font-size=%2290%22&gt;🏠&lt;/text&gt;&lt;/svg&gt;">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Home Pro Journal">
+<meta property="og:title" content="Do Not Sell or Share My Personal Information — Home Pro Journal">
+<meta property="og:description" content="Submit a privacy request or opt out of the sale or sharing of your personal information.">
+<meta property="og:url" content="https://homeprojournal.com/do-not-sell/">
+<meta property="og:image" content="https://homeprojournal.com/9-overlooked-homeowner-savings-programs/hero_web.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Do Not Sell or Share My Personal Information — Home Pro Journal">
+<meta name="twitter:description" content="Submit a privacy request or opt out of the sale or sharing of your personal information.">
+<title>Do Not Sell or Share My Personal Information — Home Pro Journal</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+<div class="shell">
+
+  <header class="masthead">
+    <a class="brand-link" href="/">
+      <p class="brand-name">Home Pro <span>Journal</span></p>
+      <p class="brand-tag">Practical Savings for Homeowners</p>
+    </a>
+  </header>
+
+  <div class="col">
+    <p class="eyebrow">Your Privacy Choices</p>
+    <h1>Do Not Sell or Share My Personal Information</h1>
+    <p class="updated">Last updated: <span class="today">2026</span></p>
+
+    <div class="callout">
+      <strong>Before launch:</strong> This form posts to a Cloudflare Pages Function at <code>/api/privacy-request</code>. To start receiving requests, set a delivery method in your Cloudflare Pages environment variables (either <code>FORMSPREE_ENDPOINT</code>, or <code>RESEND_API_KEY</code> + <code>PRIVACY_TO</code> + <code>PRIVACY_FROM</code>). Until one is set, requests are logged to your Pages dashboard logs so none are lost. <span class="placeholder">[[ Configure a delivery method and confirm you can fulfill opt-outs within your state's required timelines. ]]</span>
+    </div>
+
+    <p class="lead">Under the California Consumer Privacy Act (CCPA/CPRA) and similar state laws, residents may have the right to opt out of the "sale" or "sharing" of their personal information. Use the form below to submit your request, or contact us directly.</p>
+
+    <p>For more detail on what we collect and how we use it, see our <a href="/privacy/">Privacy Policy</a>.</p>
+
+    <h2>Submit Your Request</h2>
+    <form id="dns-form" onsubmit="return false;">
+      <div class="field">
+        <label for="fullname">Full name</label>
+        <input id="fullname" name="fullname" type="text" autocomplete="name" required>
+      </div>
+      <div class="field">
+        <label for="email">Email address</label>
+        <input id="email" name="email" type="email" autocomplete="email" required>
+      </div>
+      <div class="field">
+        <label for="state">State of residence</label>
+        <input id="state" name="state" type="text" autocomplete="address-level1">
+      </div>
+      <div class="field">
+        <label for="request">Request type</label>
+        <select id="request" name="request">
+          <option>Do not sell or share my personal information</option>
+          <option>Delete my personal information</option>
+          <option>Access the personal information you have about me</option>
+          <option>Correct my personal information</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="details">Additional details (optional)</label>
+        <textarea id="details" name="details"></textarea>
+      </div>
+      <!-- Honeypot: hidden from humans, catches bots. Do not remove. -->
+      <div style="position:absolute;left:-9999px;" aria-hidden="true">
+        <label for="company">Company</label>
+        <input id="company" name="company" type="text" tabindex="-1" autocomplete="off">
+      </div>
+      <button class="btn" type="submit" id="dns-submit">Submit Request</button>
+      <p id="dns-msg" style="display:none;font-family:'Helvetica Neue',Arial,sans-serif;font-size:15px;color:var(--brand-ink);margin-top:14px;"></p>
+    </form>
+
+    <h2>Other Ways to Reach Us</h2>
+    <p>You can also submit a request by email to privacy@homeprojournal.com or by mail to Home Pro Journal, 1015 Atlantic Blvd, Atlantic Beach, FL 32233.</p>
+    <p>We will respond to verifiable consumer requests within the timeframe required by applicable law. We may need to verify your identity before processing certain requests. We will not discriminate against you for exercising your privacy rights.</p>
+
+    <h2>Authorized Agents</h2>
+    <p>You may use an authorized agent to submit a request on your behalf. We may require the agent to provide proof of authorization and may require you to verify your identity directly.</p>
+  </div>
+
+  <footer class="foot">
+    <div class="col">
+      <div class="foot-links">
+        <a href="/privacy/">Privacy Policy</a>
+        <a href="/terms/">Terms of Use</a>
+        <a href="/do-not-sell/">Do Not Sell My Information</a>
+        <a href="/contact/">Contact</a>
+      </div>
+      <p style="margin-top:14px;">© <span class="year">2026</span> Home Pro Journal. All rights reserved.</p>
+    </div>
+  </footer>
+
+</div>
+<script>
+  var d=new Date();
+  document.querySelectorAll('.year').forEach(function(e){e.textContent=d.getFullYear();});
+  document.querySelectorAll('.today').forEach(function(e){e.textContent=d.toLocaleDateString('en-US',{month:'long',day:'numeric',year:'numeric'});});
+
+  (function(){
+    var form=document.getElementById('dns-form');
+    var msg=document.getElementById('dns-msg');
+    var btn=document.getElementById('dns-submit');
+
+    function show(text,color){
+      msg.style.display='block';
+      msg.style.color=color||'var(--brand-ink)';
+      msg.textContent=text;
+    }
+
+    form.addEventListener('submit',function(e){
+      e.preventDefault();
+
+      var data={
+        fullname:form.fullname.value.trim(),
+        email:form.email.value.trim(),
+        state:form.state.value.trim(),
+        request:form.request.value,
+        details:form.details.value.trim(),
+        company:form.company ? form.company.value : '' // honeypot
+      };
+
+      if(!data.fullname || !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(data.email)){
+        show('Please enter a valid name and email address.','#a4451a');
+        return;
+      }
+
+      btn.disabled=true;
+      btn.textContent='Submitting…';
+
+      fetch('/api/privacy-request',{
+        method:'POST',
+        headers:{'Content-Type':'application/json'},
+        body:JSON.stringify(data)
+      }).then(function(r){return r.json().catch(function(){return {ok:r.ok};});})
+        .then(function(res){
+          if(res && res.ok){
+            form.reset();
+            show('Thank you. Your request has been received and will be processed in accordance with applicable law. If you don\u2019t hear back, you can also email privacy@homeprojournal.com.');
+          }else{
+            show((res && res.error) || 'Something went wrong. Please email privacy@homeprojournal.com to submit your request.','#a4451a');
+          }
+        }).catch(function(){
+          show('We couldn\u2019t submit your request right now. Please email privacy@homeprojournal.com and we\u2019ll process it.','#a4451a');
+        }).finally(function(){
+          btn.disabled=false;
+          btn.textContent='Submit Request';
+        });
+    });
+  })();
+</script>
+</body>
+</html>

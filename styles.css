@@ -1,0 +1,125 @@
+/* ============================================================
+   HOME PRO JOURNAL — shared site styles (legal + root pages)
+   Brand name lives in HTML only. Edit placeholders marked
+   [[ ... ]] in each HTML file before launch.
+   ============================================================ */
+:root{
+  --ink:#1a1f2b;
+  --ink-soft:#46505f;
+  --paper:#ffffff;
+  --wash:#f5f6f3;
+  --line:#e3e6e1;
+  --brand:#15543f;
+  --brand-ink:#0e3b2c;
+  --accent:#c2541f;
+  --accent-ink:#a4451a;
+  --shell:840px;
+  --text:720px;
+}
+*{box-sizing:border-box;}
+html{-webkit-text-size-adjust:100%;}
+body{
+  margin:0;background:var(--wash);color:var(--ink);
+  font-family:'Lora',Georgia,'Times New Roman',serif;
+  font-size:19px;line-height:1.62;-webkit-font-smoothing:antialiased;
+}
+.shell{max-width:var(--shell);margin:0 auto;background:var(--paper);min-height:100vh;}
+a{color:var(--brand);}
+
+/* Masthead */
+.masthead{
+  border-top:5px solid var(--brand);background:var(--paper);
+  padding:18px 26px 14px;border-bottom:1px solid var(--line);text-align:center;
+}
+.masthead a.brand-link{text-decoration:none;}
+.brand-name{
+  font-family:"Helvetica Neue",Arial,sans-serif;font-weight:800;
+  letter-spacing:.06em;text-transform:uppercase;color:var(--brand-ink);
+  font-size:23px;margin:0;
+}
+.brand-name span{color:var(--accent);}
+.brand-tag{
+  font-family:"Helvetica Neue",Arial,sans-serif;font-size:11px;
+  letter-spacing:.18em;text-transform:uppercase;color:var(--ink-soft);margin:4px 0 0;
+}
+
+/* Content column */
+.col{max-width:var(--text);margin:0 auto;padding:34px 26px 10px;}
+.eyebrow{
+  font-family:"Helvetica Neue",Arial,sans-serif;font-size:12.5px;
+  letter-spacing:.16em;text-transform:uppercase;color:var(--accent-ink);
+  font-weight:700;margin:0 0 10px;
+}
+h1{font-family:'Lora',Georgia,serif;font-weight:700;font-size:34px;line-height:1.18;margin:0 0 8px;}
+h2{font-family:'Lora',Georgia,serif;font-weight:700;font-size:23px;line-height:1.25;margin:30px 0 8px;}
+h3{font-family:"Helvetica Neue",Arial,sans-serif;font-weight:700;font-size:17px;margin:22px 0 6px;}
+p{margin:13px 0;}
+ul,ol{margin:13px 0;padding-left:24px;}
+li{margin:6px 0;}
+.updated{
+  font-family:"Helvetica Neue",Arial,sans-serif;font-size:13.5px;
+  color:var(--ink-soft);border-bottom:1px solid var(--line);
+  padding-bottom:16px;margin-bottom:8px;
+}
+.lead{font-size:20px;}
+.callout{
+  background:var(--wash);border-left:3px solid var(--brand);
+  padding:14px 18px;margin:20px 0;font-size:16.5px;
+  font-family:"Helvetica Neue",Arial,sans-serif;color:var(--ink-soft);
+}
+.placeholder{
+  background:#fff7ed;border:1px dashed var(--accent);
+  padding:3px 7px;border-radius:4px;font-family:"Helvetica Neue",Arial,sans-serif;
+  font-size:14px;color:var(--accent-ink);font-weight:600;
+}
+
+/* Buttons / form (Do Not Sell) */
+.btn{
+  display:inline-block;background:var(--brand);color:#fff;text-decoration:none;
+  font-family:"Helvetica Neue",Arial,sans-serif;font-weight:700;font-size:16px;
+  padding:13px 22px;border-radius:7px;border:none;cursor:pointer;margin-top:8px;
+}
+.btn:hover{background:var(--brand-ink);}
+.field{margin:16px 0;}
+.field label{
+  display:block;font-family:"Helvetica Neue",Arial,sans-serif;
+  font-size:15px;font-weight:600;margin-bottom:6px;
+}
+.field input,.field select,.field textarea{
+  width:100%;padding:11px 12px;border:1px solid var(--line);border-radius:7px;
+  font-size:16px;font-family:"Helvetica Neue",Arial,sans-serif;background:#fff;
+}
+.field textarea{min-height:90px;resize:vertical;}
+
+/* Root page index of articles */
+.cards{margin:24px 0;}
+.card{
+  border-top:1px solid var(--line);padding:22px 0;
+}
+.card .kicker{
+  font-family:"Helvetica Neue",Arial,sans-serif;font-size:12px;
+  letter-spacing:.1em;text-transform:uppercase;color:var(--accent-ink);
+  font-weight:700;margin:0 0 6px;
+}
+.card h2{margin:0 0 6px;font-size:24px;}
+.card h2 a{text-decoration:none;color:var(--ink);}
+.card h2 a:hover{color:var(--brand);}
+.card p{margin:6px 0 0;color:var(--ink-soft);font-size:17px;}
+
+/* Footer */
+.foot{
+  background:var(--wash);border-top:1px solid var(--line);padding:26px;
+  font-family:"Helvetica Neue",Arial,sans-serif;font-size:12.5px;line-height:1.6;
+  color:var(--ink-soft);margin-top:40px;
+}
+.foot .col{max-width:var(--text);padding:0;margin:0 auto;}
+.foot p{margin:10px 0;}
+.foot a{color:var(--ink-soft);text-decoration:underline;}
+.foot-links{margin-top:14px;display:flex;flex-wrap:wrap;gap:14px;}
+
+@media (max-width:600px){
+  body{font-size:18px;}
+  h1{font-size:27px;}
+  .col{padding:26px 18px 8px;}
+  .masthead{padding:16px 18px 12px;}
+}
