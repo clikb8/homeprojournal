@@ -84,14 +84,14 @@
     .hero-img-wrap {
       width: 100%;
       background: linear-gradient(135deg, #1e3a5f 0%, #2563eb 100%);
-      min-height: 280px;
-      max-height: 460px;
+      height: 420px;
       overflow: hidden;
     }
     .hero-img-wrap img {
       width: 100%;
       height: 100%;
       object-fit: cover;
+      object-position: center 65%;
     }
 
     /* ── AS SEEN IN ─────────────────────── */
@@ -248,14 +248,7 @@
     }
     .btn-green:hover { background: #15803d; }
 
-    /* ── TESTIMONIALS ───────────────────── */
-    .testimonials-wrap {
-      background: #f9fafb;
-      border-top: 1px solid #e5e7eb;
-      border-bottom: 1px solid #e5e7eb;
-      padding: 52px 24px;
-      margin-top: 52px;
-    }
+    /* ── SECTION LABELS ────────────────── */
     .sec-kicker {
       text-align: center;
       font-size: 11px;
@@ -273,42 +266,6 @@
       margin-bottom: 32px;
       letter-spacing: -.01em;
     }
-    .t-grid {
-      max-width: 900px;
-      margin: 0 auto;
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 18px;
-    }
-    .t-card {
-      background: #fff;
-      border: 1px solid #e5e7eb;
-      border-radius: 12px;
-      padding: 22px;
-      box-shadow: 0 1px 6px rgba(0,0,0,.06);
-    }
-    .stars { color: #f59e0b; font-size: 15px; letter-spacing: 2px; margin-bottom: 10px; }
-    .t-text {
-      font-size: 14px;
-      color: #4b5563;
-      font-style: italic;
-      margin-bottom: 16px;
-      line-height: 1.65;
-    }
-    .t-author-row { display: flex; align-items: center; gap: 10px; }
-    .t-ava {
-      width: 34px; height: 34px;
-      border-radius: 50%;
-      color: #fff;
-      font-size: 12px;
-      font-weight: 700;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-    }
-    .t-name  { font-size: 14px; font-weight: 700; color: #111; }
-    .t-loc   { font-size: 12px; color: #9ca3af; }
 
     /* ── LOAN VS EQUITY SHARING ─────────── */
     .comparison-wrap {
@@ -732,7 +689,7 @@
 
   <!-- AS SEEN IN -->
   <div class="as-seen-in">
-    <p class="asi-label">As seen in</p>
+    <p class="asi-label">Ads seen in</p>
     <div class="asi-logos">
       <span class="asi-logo aol">AOL</span>
       <span class="asi-logo msn">msn</span>
@@ -811,47 +768,6 @@
 
   </div><!-- /art -->
 
-  <!-- TESTIMONIALS -->
-  <div class="testimonials-wrap">
-    <p class="sec-kicker">Real Homeowners</p>
-    <p class="sec-title">Real <span class="region-inject">Homeowners</span>. Real Stories.</p>
-    <div class="t-grid">
-      <div class="t-card">
-        <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-        <p class="t-text">"Finally made sense for me after retirement. Banks kept saying no — this was approved in weeks. Just sharing some future value, no monthly payments. I'm finally financially comfortable."</p>
-        <div class="t-author-row">
-          <div class="t-ava" style="background:#2563eb">SL</div>
-          <div>
-            <div class="t-name">Sharon L.</div>
-            <div class="t-loc">Retired &bull; <span class="region-inject">your state</span></div>
-          </div>
-        </div>
-      </div>
-      <div class="t-card">
-        <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-        <p class="t-text">"I had no idea this was an option. Got $72K, used it to pay off all my credit cards and put new floors in the kitchen. No monthly payment. Just waiting to sell and then settle."</p>
-        <div class="t-author-row">
-          <div class="t-ava" style="background:#7c3aed">DK</div>
-          <div>
-            <div class="t-name">David K.</div>
-            <div class="t-loc">Homeowner, 11 yrs &bull; <span class="region-inject">your state</span></div>
-          </div>
-        </div>
-      </div>
-      <div class="t-card">
-        <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-        <p class="t-text">"Self-employed, so refinancing was a nightmare of paperwork that went nowhere. Equity sharing approved me based on my home, not my income. Would absolutely recommend."</p>
-        <div class="t-author-row">
-          <div class="t-ava" style="background:#0d9488">NA</div>
-          <div>
-            <div class="t-name">Nicole A.</div>
-            <div class="t-loc">Business owner &bull; <span class="region-inject">your state</span></div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
   <!-- LOAN VS EQUITY SHARING -->
   <div class="comparison-wrap">
     <div class="comparison-inner">
@@ -865,7 +781,7 @@
           <div class="comp-amount loan">+$540/mo</div>
           <div class="comp-row"><span class="comp-row-lbl">Cash Accessed</span><span class="comp-row-val">Up to $500K</span></div>
           <div class="comp-row"><span class="comp-row-lbl">Monthly Payment</span><span class="comp-row-val" style="color:#dc2626">Varies</span></div>
-          <div class="comp-row"><span class="comp-row-lbl">Interest</span><span class="comp-row-val" style="color:#dc2626">Not Included</span></div>
+          <div class="comp-row"><span class="comp-row-lbl">Interest</span><span class="comp-row-val" style="color:#dc2626">Yes — high rate</span></div>
           <div class="comp-row"><span class="comp-row-lbl">Location</span><span class="comp-row-val"><span class="city-inject">Your City</span>, <span class="region-abbr-inject">--</span></span></div>
         </div>
 
@@ -921,7 +837,7 @@
         <div class="dark-cta-sub">Know about $0 amounts — no monthly payments, no interest, no obligations.</div>
         <form class="zip-form" action="https://read.homeprojournal.com/cf/click" method="GET">
           <input class="zip-input" type="text" name="zip" inputmode="numeric" placeholder="Enter your ZIP code" maxlength="5" />
-          <button class="btn-zip" type="submit">Members-Based Qualify For &rarr;</button>
+          <button class="btn-zip" type="submit">See If I Qualify &rarr;</button>
         </form>
         <div class="zip-trust">
           <span>No monthly payments</span>
