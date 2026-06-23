@@ -94,41 +94,6 @@
       object-position: center 65%;
     }
 
-    /* ── AS SEEN IN ─────────────────────── */
-    .as-seen-in {
-      background: #f9fafb;
-      border-top: 1px solid #e5e7eb;
-      border-bottom: 1px solid #e5e7eb;
-      padding: 14px 24px;
-      text-align: center;
-    }
-    .asi-label {
-      font-size: 9px;
-      font-weight: 700;
-      letter-spacing: .14em;
-      text-transform: uppercase;
-      color: #9ca3af;
-      margin-bottom: 8px;
-    }
-    .asi-logos {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 28px;
-      flex-wrap: wrap;
-    }
-    .asi-logo {
-      font-size: 15px;
-      font-weight: 800;
-      letter-spacing: -.01em;
-      color: #9ca3af;
-      line-height: 1;
-    }
-    .asi-logo.aol    { color: #ff5500; font-size: 16px; }
-    .asi-logo.msn    { color: #5f5f5f; font-weight: 400; font-size: 18px; letter-spacing: .02em; }
-    .asi-logo.yahoo  { color: #7e1fff; font-style: italic; font-size: 16px; }
-    .asi-logo.forbes { color: #222; font-family: Georgia, serif; font-size: 16px; }
-    .asi-logo.cnn    { color: #cc0000; letter-spacing: .06em; font-size: 14px; }
 
     /* ── ARTICLE BODY ───────────────────── */
     .art {
@@ -460,42 +425,6 @@
     .avg-num   { font-size: 48px; font-weight: 900; color: #22c55e; line-height: 1; }
     .avg-label { font-size: 13px; color: #93c5fd; margin-top: 4px; }
 
-    /* ── STATE SELECTOR ─────────────────── */
-    .state-section {
-      padding: 48px 24px;
-      background: #f9fafb;
-      border-top: 1px solid #e5e7eb;
-    }
-    .state-inner {
-      max-width: 820px;
-      margin: 0 auto;
-    }
-    .state-grid {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 6px;
-      margin-top: 22px;
-    }
-    .s-pill {
-      padding: 5px 10px;
-      border-radius: 6px;
-      font-size: 12px;
-      font-weight: 600;
-      background: #e2e8f0;
-      color: #475569;
-      cursor: default;
-    }
-    .s-pill.active {
-      background: #22c55e;
-      color: #fff;
-    }
-    .s-view-all {
-      margin-top: 14px;
-      font-size: 13px;
-      color: #2563eb;
-      text-decoration: none;
-    }
-    .s-view-all:hover { text-decoration: underline; }
 
     /* ── TRUST BADGES ───────────────────── */
     .trust-section {
@@ -696,19 +625,7 @@
 
   <!-- Hero image — replace src with your image -->
   <div class="hero-img-wrap">
-    <img src="hero.jpg" alt="Homeowners relaxing at their home" />
-  </div>
-
-  <!-- AS SEEN IN -->
-  <div class="as-seen-in">
-    <p class="asi-label">Ads seen in</p>
-    <div class="asi-logos">
-      <span class="asi-logo aol">AOL</span>
-      <span class="asi-logo msn">msn</span>
-      <span class="asi-logo yahoo">Yahoo!</span>
-      <span class="asi-logo forbes">Forbes</span>
-      <span class="asi-logo cnn">CNN</span>
-    </div>
+    <img src="hero-og.jpg" alt="Homeowners relaxing at their home" />
   </div>
 
   <!-- Article body -->
@@ -740,7 +657,7 @@
     <p>Worse, a cash-out refinance can mean giving up the low mortgage rate you locked in years ago. For millions of homeowners, that alone makes borrowing a non-starter — why reset your entire mortgage at a higher rate just to access cash you already earned?</p>
 
     <div class="callout-green">
-      "I wasn't about to trade my 3.1% mortgage for a 7% one just to pull out some cash. There had to be a better way — and there was."
+      Many homeowners with sub-4% mortgages are bypassing cash-out refinancing entirely — choosing equity sharing to avoid resetting their mortgage at today's higher rates.
     </div>
 
     <h2 class="ah2">A Different Way to Use Your Equity</h2>
@@ -817,7 +734,7 @@
       <div>
         <div class="step-icon-wrap">📍</div>
         <div class="step-title">Enter Your ZIP Code</div>
-        <div class="step-desc">Tell us a few details about your home and goals. No credit pull required at this step.</div>
+        <div class="step-desc">Tell us a few details about your home and goals. No commitment required at this step.</div>
       </div>
       <div>
         <div class="step-icon-wrap">📋</div>
@@ -837,7 +754,7 @@
     <div class="dark-cta-inner">
       <div>
         <div class="dark-cta-title">See How Much Equity You Could Access</div>
-        <div class="dark-cta-sub">Know about $0 amounts — no monthly payments, no interest, no obligations.</div>
+        <div class="dark-cta-sub">No monthly payments. No interest. Your estimate is free — no commitment required.</div>
         <form class="zip-form" action="https://read.homeprojournal.com/cf/click" method="GET">
           <input class="zip-input" type="text" name="zip" inputmode="numeric" placeholder="Enter your ZIP code" maxlength="5" />
           <button class="btn-zip" type="submit">See If I Qualify &rarr;</button>
@@ -850,20 +767,8 @@
       </div>
       <div class="dark-cta-right">
         <div class="avg-num">$500K</div>
-        <div class="avg-label">avg. accessed per year</div>
+        <div class="avg-label">maximum — $30K minimum</div>
       </div>
-    </div>
-  </div>
-
-  <!-- STATE SELECTOR -->
-  <div class="state-section">
-    <div class="state-inner">
-      <p class="sec-title" style="text-align:left;font-size:22px">Select Your State</p>
-      <p style="font-size:14px;color:#6b7280">Home equity sharing availability in your state.</p>
-      <div class="state-grid" id="state-grid">
-        <!-- Populated by JS -->
-      </div>
-      <a href="#" class="s-view-all">View All States &rarr;</a>
     </div>
   </div>
 
@@ -880,7 +785,7 @@
       </div>
       <div>
         <div class="trust-icon">🏡</div>
-        <div class="trust-text">Homeowners have accessed<br /><strong>over $500K</strong></div>
+        <div class="trust-text">Investments from<br /><strong>$30K up to $500K</strong></div>
       </div>
     </div>
   </div>
@@ -911,8 +816,12 @@
         <p class="faq-ans">Anything you choose — debt payoff, home renovations, medical bills, education, retirement income, starting a business. There are no restrictions on how you use the funds once they're wired to your account.</p>
       </details>
       <details class="faq">
+        <summary>Are there any fees?</summary>
+        <p class="faq-ans">Yes. There is a one-time transaction fee — typically around 3.9% of the investment amount — deducted at closing. There are no monthly fees, no ongoing interest charges, and no prepayment penalties. When you settle (at sale or end of term), you repay the original investment amount plus or minus the agreed share of your home's change in value. Total cost depends on how your home's value changes over time.</p>
+      </details>
+      <details class="faq">
         <summary>Does checking my estimate cost anything or hurt my credit?</summary>
-        <p class="faq-ans">No. The initial estimate check is completely free and uses a soft credit inquiry that has zero impact on your credit score. A hard pull only happens if you choose to proceed with a full application after reviewing your offer.</p>
+        <p class="faq-ans">The estimate check is free. Many providers use a soft credit pull for the initial check — confirm the specific process with your provider, as practices vary. A hard inquiry typically only occurs if you choose to proceed with a full application.</p>
       </details>
     </div>
   </div>
