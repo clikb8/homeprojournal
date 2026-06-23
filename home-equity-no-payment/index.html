@@ -845,17 +845,6 @@
 
   <script>
     (function () {
-      var params = new URLSearchParams(window.location.search);
-      var rawCity   = (params.get('city')   || '').trim();
-      var rawRegion = (params.get('region') || '').trim();
-
-      function titleCase(s) {
-        return decodeURIComponent(s).replace(/\w\S*/g, function(t) {
-          return t.charAt(0).toUpperCase() + t.substr(1).toLowerCase();
-        });
-      }
-
-      // State name → abbreviation map
       var stateAbbr = {
         'alabama':'AL','alaska':'AK','arizona':'AZ','arkansas':'AR','california':'CA',
         'colorado':'CO','connecticut':'CT','delaware':'DE','florida':'FL','georgia':'GA',
@@ -871,42 +860,36 @@
         'wisconsin':'WI','wyoming':'WY'
       };
 
-      var allAbbrs = ['AL','AK','AZ','AR','CA','CO','CT','DE','FL','GA','HI','ID',
-        'IL','IN','IA','KS','KY','LA','ME','MD','MA','MI','MN','MS','MO','MT',
-        'NE','NV','NH','NJ','NM','NY','NC','ND','OH','OK','OR','PA','RI','SC',
-        'SD','TN','TX','UT','VT','VA','WA','WV','WI','WY'];
-
-      var city   = rawCity   ? titleCase(rawCity)   : '';
-      var region = rawRegion ? titleCase(rawRegion) : '';
-
-      // Resolve abbreviation
-      var regionLower = rawRegion.toLowerCase();
-      var resolvedAbbr = stateAbbr[regionLower] || rawRegion.toUpperCase().slice(0,2);
-
-      // Inject city
-      if (city) {
-        document.querySelectorAll('.city-inject').forEach(function(el){ el.textContent = city; });
-      }
-
-      // Inject region (full name)
-      if (region) {
-        document.querySelectorAll('.region-inject').forEach(function(el){ el.textContent = region; });
-      }
-
-      // Inject region abbreviation
-      document.querySelectorAll('.region-abbr-inject').forEach(function(el){
-        el.textContent = resolvedAbbr || '--';
-      });
-
-      // Build state pills
-      var grid = document.getElementById('state-grid');
-      if (grid) {
-        allAbbrs.forEach(function(abbr){
-          var pill = document.createElement('span');
-          pill.className = 's-pill' + (abbr === resolvedAbbr ? ' active' : '');
-          pill.textContent = abbr;
-          grid.appendChild(pill);
+      function titleCase(s) {
+        return decodeURIComponent(s).replace(/\w\S*/g, function(t) {
+          return t.charAt(0).toUpperCase() + t.substr(1).toLowerCase();
         });
+      }
+
+      function inject(rawCity, rawRegion) {
+        var city         = rawCity   ? titleCase(rawCity)   : '';
+        var region       = rawRegion ? titleCase(rawRegion) : '';
+        var regionLower  = (rawRegion || '').toLowerCase();
+        var resolvedAbbr = stateAbbr[regionLower] || (rawRegion || '').toUpperCase().slice(0, 2);
+
+        if (city)   document.querySelectorAll('.city-inject').forEach(function(el){ el.textContent = city; });
+        if (region) document.querySelectorAll('.region-inject').forEach(function(el){ el.textContent = region; });
+        document.querySelectorAll('.region-abbr-inject').forEach(function(el){
+          el.textContent = resolvedAbbr || '--';
+        });
+      }
+
+      var params    = new URLSearchParams(window.location.search);
+      var rawCity   = (params.get('city')   || '').trim();
+      var rawRegion = (params.get('region') || '').trim();
+
+      if (rawCity || rawRegion) {
+        inject(rawCity, rawRegion);
+      } else {
+        fetch('https://ipapi.co/json/')
+          .then(function(r) { return r.json(); })
+          .then(function(d) { inject(d.city || '', d.region || ''); })
+          .catch(function()  { /* fail silently — fallback text already in HTML */ });
       }
     })();
   </script>
